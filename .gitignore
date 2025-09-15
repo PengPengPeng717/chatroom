@@ -1,0 +1,60 @@
+# 二进制文件
+chatroom
+client
+test
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# 构建目录
+build/
+dist/
+bin/
+
+# 测试文件
+*.test
+*.out
+coverage.out
+coverage.html
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 依赖目录
+vendor/
+
+# 环境文件
+.env
+.env.local
+.env.production
+
+# Docker相关
+.dockerignore
+
+# 系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Go相关
+go.work
