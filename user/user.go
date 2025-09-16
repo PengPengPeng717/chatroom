@@ -8,20 +8,20 @@ import (
 
 // User 用户结构体
 type User struct {
-	ID       string
-	Name     string
-	MsgChan  chan string
-	DoneChan chan bool
-	JoinTime time.Time
-	LastSeen time.Time
-	IsActive bool
+	ID       string      // 用户ID
+	Name     string      // 用户名
+	MsgChan  chan string // 消息通道
+	DoneChan chan bool   // 退出信号
+	JoinTime time.Time   // 加入时间
+	LastSeen time.Time   // 最后活跃时间
+	IsActive bool        // 是否活跃
 }
 
 // UserManager 用户管理器
 type UserManager struct {
-	users    map[string]*User
-	mutex    sync.RWMutex
-	maxUsers int
+	users    map[string]*User // 用户列表
+	mutex    sync.RWMutex     // 互斥锁
+	maxUsers int              // 最大用户数
 }
 
 // NewUserManager 创建新的用户管理器

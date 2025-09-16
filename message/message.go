@@ -10,20 +10,20 @@ import (
 type MessageType int
 
 const (
-	TypeChat MessageType = iota
-	TypeSystem
-	TypeCommand
-	TypePrivate
-	TypeBroadcast
+	TypeChat      MessageType = iota // 聊天消息
+	TypeSystem                       // 系统消息
+	TypeCommand                      // 命令消息
+	TypePrivate                      // 私聊消息
+	TypeBroadcast                    // 广播消息
 )
 
 // Message 消息结构体
 type Message struct {
-	Type      MessageType
-	From      string
-	To        string
-	Content   string
-	Timestamp time.Time
+	Type      MessageType // 消息类型
+	From      string      // 发送者
+	To        string      // 目标用户
+	Content   string      // 消息内容
+	Timestamp time.Time   // 时间戳
 }
 
 // NewMessage 创建新消息
@@ -82,13 +82,13 @@ func NewCommandParser() *CommandParser {
 
 // ParseCommand 解析用户输入的命令
 func (cp *CommandParser) ParseCommand(input string) (Command, error) {
-	input = strings.TrimSpace(input)
+	input = strings.TrimSpace(input) // 去除空格
 
-	if !strings.HasPrefix(input, "\\") {
+	if !strings.HasPrefix(input, "\\") { // 判断是否以\开头
 		return Command{Type: CmdChat, Content: input}, nil
 	}
 
-	parts := strings.Fields(input)
+	parts := strings.Fields(input) // 分割字符串
 	if len(parts) == 0 {
 		return Command{}, fmt.Errorf("无效命令")
 	}
@@ -139,9 +139,9 @@ const (
 
 // Command 命令结构体
 type Command struct {
-	Type    CommandType
-	Content string
-	Target  string
+	Type    CommandType // 命令类型
+	Content string      // 命令内容
+	Target  string      // 目标用户
 }
 
 // GetHelpMessage 获取帮助信息

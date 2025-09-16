@@ -15,10 +15,10 @@ import (
 
 // ConnectionHandler 连接处理器
 type ConnectionHandler struct {
-	userManager   *user.UserManager
-	commandParser *message.CommandParser
-	logger        *utils.Logger
-	config        *config.Config
+	userManager   *user.UserManager      // 用户管理器
+	commandParser *message.CommandParser // 命令解析器
+	logger        *utils.Logger          // 日志记录器
+	config        *config.Config         // 配置
 }
 
 // NewConnectionHandler 创建新的连接处理器

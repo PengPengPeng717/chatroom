@@ -15,12 +15,12 @@ import (
 
 // ChatServer 聊天服务器
 type ChatServer struct {
-	config            *config.Config
-	userManager       *user.UserManager
-	connectionHandler *handler.ConnectionHandler
-	logger            *utils.Logger
-	listener          net.Listener
-	isRunning         bool
+	config            *config.Config             // 配置
+	userManager       *user.UserManager          // 用户管理器
+	connectionHandler *handler.ConnectionHandler // 连接处理器
+	logger            *utils.Logger              // 日志记录器
+	listener          net.Listener               // 监听器
+	isRunning         bool                       // 是否运行
 }
 
 // NewChatServer 创建新的聊天服务器
